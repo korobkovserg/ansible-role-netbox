@@ -134,6 +134,7 @@ reset your superuser password if you forget it.)
 [source,yaml]
 ----
 netbox_database: netbox
+netbox_database_maintenance_db: postgres
 netbox_database_user: netbox
 #netbox_database_password: changeme
 #netbox_database_host: localhost
@@ -144,6 +145,9 @@ netbox_database_port: 5432
 It is *required* to configure either a socket directory (to communicate over
 UNIX sockets) or a host/password (to use TCP/IP). See the _Example Playbook_
 section for more information on configuring the database.
+
+If the database is already created but user does not have rights to connect to 
+default maintenance db just specify target database as maintenance.
 
 Note that these are used to configure `DATABASE` in `configuration.py`.
 
@@ -393,6 +397,7 @@ installing NetBox on to authenticate with it over TCP:
     netbox_database_host: pg-netbox.idolactiviti.es
     netbox_database_port: 15432
     netbox_database: netbox_prod
+    netbox_database_maintenance_db: netbox_prod
     netbox_database_user: netbox_prod_user
     netbox_database_password: "very_secure_password_for_prod"
     redis_bind: 127.0.0.1

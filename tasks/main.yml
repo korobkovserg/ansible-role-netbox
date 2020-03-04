@@ -38,6 +38,7 @@
     port: "{{ netbox_database_port }}"
     login_user: "{{ netbox_database_user }}"
     login_password: "{{ netbox_database_password }}"
+    maintenance_db: "{{ netbox_database_maintenance_db }}"
   when:
     - netbox_database_socket is not defined
     - netbox_database_host is defined

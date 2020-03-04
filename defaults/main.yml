@@ -15,6 +15,7 @@ netbox_superuser_username: admin
 netbox_superuser_email: admin@localhost
 
 netbox_database: netbox
+netbox_database_maintenance_db: postgres
 netbox_database_user: netbox
 #netbox_database_password: changeme
 #netbox_database_host: localhost
